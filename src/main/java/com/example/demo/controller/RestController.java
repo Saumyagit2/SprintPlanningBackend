@@ -37,12 +37,35 @@ public class RestController {
     	return service.showAllEmp();
     }
     
+    
+    @GetMapping("/all-Tasks")
+    @CrossOrigin
+    public Iterable<PrimaryTask> showAllTasks(){
+    	return primaryTaskService.showAllTasks();
+    }
+    
+//    @GetMapping("/delete/{task_id}")
+//    @CrossOrigin
+//    public Iterable<PrimaryTask> deleteTask(@PathVariable int task_id){
+//    	return primaryTaskService.deleteByTask_id(task_id);
+//    }
+    
+   @GetMapping("/delete/{taskId}")
+   @Transactional
+   @CrossOrigin
+   public Iterable<PrimaryTask> deleteTask(@PathVariable int taskId){
+    	return primaryTaskService.deleteBytaskid(taskId);
+  }
+  
+    
+    
     @PostMapping("/addPrimary")
     @Transactional
+    @CrossOrigin
     public String addPrimaryTask(@RequestBody PrimaryTask task)
     {
     	primaryTaskService.savePrimaryTask(task);
-    	return "task "+task.getTask_name()+"is created";
+    	return "task "+task.getTaskName()+"is created";
     }
     
     @GetMapping("/search/{email}")
@@ -50,7 +73,7 @@ public class RestController {
     @CrossOrigin
     public Employee searchEmployee(@PathVariable String email)
     {
-    	return service.findByUsername(email);
+    	return service.findByEmail(email);
     }
     
 }

@@ -4,6 +4,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.example.demo.dao.PrimaryTaskRepo;
+
 import com.example.demo.model.PrimaryTask;
 
 @Service
@@ -24,5 +25,20 @@ public class PrimaryTaskService {
 	{
 		repo.save(task);
 	}
-	
+	 public Iterable<PrimaryTask> showAllTasks()
+	    {
+	    	return repo.findAll();
+	    }
+//	 public Iterable<PrimaryTask> deleteByTask_id(int task_id)
+//	    {
+//	    	repo.deleteByTask_id(task_id);
+//	    	return repo.findAll();
+//	    }
+
+	 public Iterable<PrimaryTask> deleteBytaskid(int taskId)
+	    {
+	    	repo.deleteByTaskId(taskId);
+	    	return repo.findAll();
+	    }
+	 
 }

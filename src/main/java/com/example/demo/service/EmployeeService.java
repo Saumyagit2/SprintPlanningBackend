@@ -26,7 +26,7 @@ public class EmployeeService {
     {
     	return repo.findAll();
     }
-    public Employee findByUsername(String email)
+    public Employee findByEmail(String email)
     {
     	return repo.findByEmail(email);
     }

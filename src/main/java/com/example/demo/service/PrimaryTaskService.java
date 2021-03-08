@@ -41,4 +41,11 @@ public class PrimaryTaskService {
 	    	return repo.findAll();
 	    }
 	 
+	 public Iterable<PrimaryTask> Update(PrimaryTask task)
+	 {
+		 
+		 repo.save(task);
+		 return repo.findAll();
+	 }
+	 
 }

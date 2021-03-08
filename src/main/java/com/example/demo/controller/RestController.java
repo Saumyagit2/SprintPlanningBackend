@@ -12,8 +12,10 @@ import org.springframework.web.bind.annotation.RequestBody;
 
 import com.example.demo.model.Employee;
 import com.example.demo.model.PrimaryTask;
+import com.example.demo.model.SubTask;
 import com.example.demo.service.EmployeeService;
 import com.example.demo.service.PrimaryTaskService;
+import com.example.demo.service.SubTaskService;
 
 @org.springframework.web.bind.annotation.RestController
 public class RestController {
@@ -23,6 +25,8 @@ public class RestController {
 	
 	@Autowired
 	private PrimaryTaskService primaryTaskService;
+	@Autowired
+	private SubTaskService subtaskService;
 	
 	
 	@PostMapping("/save")
@@ -43,6 +47,12 @@ public class RestController {
     @CrossOrigin
     public Iterable<PrimaryTask> showAllTasks(){
     	return primaryTaskService.showAllTasks();
+    }
+    
+    @GetMapping("/all-SubTasks")
+    @CrossOrigin
+    public Iterable<SubTask> showAllSubTasks(){
+    	return subtaskService.showAllSubTasks();
     }
     
 //    @GetMapping("/delete/{task_id}")
@@ -84,6 +94,16 @@ public class RestController {
     {
     	primaryTaskService.savePrimaryTask(task);
     	return "task "+task.getTaskName()+"is created";
+    }
+    
+    
+    @PostMapping("/addSub")
+    @Transactional
+    @CrossOrigin
+    public String addSubTask(@RequestBody SubTask task)
+    {
+    	subtaskService.saveSubTask(task);
+    	return "task "+task.getSubtaskName()+"is created";
     }
     
     @GetMapping("/search/{email}")

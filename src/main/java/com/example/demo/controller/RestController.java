@@ -69,12 +69,28 @@ public class RestController {
   }
    
    
+   @GetMapping("/deletesubtask/{subtaskId}")
+   @Transactional
+   @CrossOrigin
+   public Iterable<SubTask> deleteTaskById(@PathVariable int subtaskId){
+    	return subtaskService.deleteBysubtaskId(subtaskId);
+  }
+   
+   
+   
    
    @PutMapping("/updateTask")
    @Transactional
    @CrossOrigin
    public Iterable<PrimaryTask> updateTask(@RequestBody PrimaryTask task ){
     	return primaryTaskService.Update(task);
+  }
+   
+   @PutMapping("/updateSubTask")
+   @Transactional
+   @CrossOrigin
+   public Iterable<SubTask> updateSubTask(@RequestBody SubTask subtask ){
+    	return subtaskService.UpdateSubTask(subtask);
   }
    
    

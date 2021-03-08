@@ -6,7 +6,7 @@ import com.example.demo.model.SubTask;
 
 public interface SubTaskRepo  extends CrudRepository<SubTask,Integer>{
 
-//	public Iterable<PrimaryTask> deleteByTask_id(int task_id);
+public Iterable<SubTask> deleteBySubtaskId(int subtaskId);
 	
 	
 }

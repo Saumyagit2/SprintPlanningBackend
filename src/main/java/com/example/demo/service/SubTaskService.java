@@ -5,7 +5,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.example.demo.dao.SubTaskRepo;
-
+import com.example.demo.model.PrimaryTask;
 import com.example.demo.model.SubTask;
 
 @Service
@@ -41,5 +41,19 @@ public class SubTaskService {
 //	    	repo.deleteByTaskId(subtaskId);
 //	    	return repo.findAll();
 //	    }
+	 
+	 public Iterable<SubTask> deleteBysubtaskId(int subtaskId)
+	    {
+	    	repo.deleteBySubtaskId(subtaskId);
+	    	return repo.findAll();
+	    }
+	 
+	 public Iterable<SubTask> UpdateSubTask(SubTask subtask)
+	 {
+		 
+		 repo.save(subtask);
+		 return repo.findAll();
+	 }
+	 
 	 
 }

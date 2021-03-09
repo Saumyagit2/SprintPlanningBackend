@@ -48,4 +48,10 @@ public class PrimaryTaskService {
 		 return repo.findAll();
 	 }
 	 
+	 public PrimaryTask findBytaskname(String taskName)
+	 {
+		return  repo.findByTaskName(taskName);
+		 
+	 }
+	 
 }

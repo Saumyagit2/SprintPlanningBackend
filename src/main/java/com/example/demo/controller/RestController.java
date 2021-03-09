@@ -128,12 +128,22 @@ public class RestController {
     	return "task "+task.getSubtaskName()+"is created";
     }
     
-    @GetMapping("/search/{email}")
+//    @GetMapping("/search/{email}")
+//    @Transactional
+//    @CrossOrigin
+//    public Employee searchEmployee(@PathVariable String email)
+//    {
+//    	return service.findByEmail(email);
+//    }
+//    
+    
+    @GetMapping("/searchtask/{taskName}")
     @Transactional
     @CrossOrigin
-    public Employee searchEmployee(@PathVariable String email)
+    public PrimaryTask searchTask(@PathVariable String taskName)
     {
-    	return service.findByEmail(email);
+    	return primaryTaskService.findBytaskname(taskName);
+    	
     }
     
 }

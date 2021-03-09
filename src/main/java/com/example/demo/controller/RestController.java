@@ -77,7 +77,13 @@ public class RestController {
   }
    
    
-   
+   @GetMapping("/getAllSubtasks/{primarytaskId}")
+   @Transactional
+   @CrossOrigin
+   public Iterable<SubTask> searchEmployee(@PathVariable int primarytaskId)
+   {
+   	return subtaskService.getAllSubtaksById(primarytaskId);
+   }
    
    @PutMapping("/updateTask")
    @Transactional

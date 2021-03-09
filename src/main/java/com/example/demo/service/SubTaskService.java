@@ -55,5 +55,10 @@ public class SubTaskService {
 		 return repo.findAll();
 	 }
 	 
+	 public Iterable<SubTask> getAllSubtaksById(int primarytaskId)
+	 {
+		 return repo.findAllByPrimarytaskId(primarytaskId);
+	 }
+	 
 	 
 }

@@ -12,6 +12,7 @@ public class SubTask {
 	private int subtaskId;
 	private String subtaskName;
 	private String description;
+	private int primarytaskId;
 	private int employeeId;
 	private String startDate;
 	private String endDate;
@@ -25,12 +26,13 @@ public class SubTask {
 
 
 
-	public SubTask(int subtaskId, String subtaskName, String description, int employeeId, String startDate,
-			String endDate, int estimatedHours, int creatorId, int modifierId) {
+	public SubTask(int subtaskId, String subtaskName, String description, int primarytaskId, int employeeId,
+			String startDate, String endDate, int estimatedHours, int creatorId, int modifierId) {
 		super();
 		this.subtaskId = subtaskId;
 		this.subtaskName = subtaskName;
 		this.description = description;
+		this.primarytaskId = primarytaskId;
 		this.employeeId = employeeId;
 		this.startDate = startDate;
 		this.endDate = endDate;
@@ -73,6 +75,18 @@ public class SubTask {
 
 	public void setDescription(String description) {
 		this.description = description;
+	}
+
+
+
+	public int getPrimarytaskId() {
+		return primarytaskId;
+	}
+
+
+
+	public void setPrimarytaskId(int primarytaskId) {
+		this.primarytaskId = primarytaskId;
 	}
 
 
@@ -150,13 +164,5 @@ public class SubTask {
 
 
 
-
-
-
-
-	
-
-
-	
-	
+		
 }

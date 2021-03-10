@@ -30,4 +30,13 @@ public class EmployeeService {
     {
     	return repo.findByEmail(email);
     }
+    
+   public Employee findByUsername(String username)
+   {
+    	return repo.findByUsername(username);
+    }
+    
+    
+    
+    
 }

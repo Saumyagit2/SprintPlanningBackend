@@ -7,5 +7,6 @@ import com.example.demo.model.Employee;
 public interface EmployeeDao extends CrudRepository<Employee,Integer>{
 	
 	public Employee findByEmail(String email);
+	public Employee findByUsername(String username);
 
 }

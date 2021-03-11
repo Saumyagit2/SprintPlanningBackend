@@ -55,11 +55,6 @@ public class RestController {
     	return subtaskService.showAllSubTasks();
     }
     
-//    @GetMapping("/delete/{task_id}")
-//    @CrossOrigin
-//    public Iterable<PrimaryTask> deleteTask(@PathVariable int task_id){
-//    	return primaryTaskService.deleteByTask_id(task_id);
-//    }
     
    @GetMapping("/delete/{taskId}")
    @Transactional

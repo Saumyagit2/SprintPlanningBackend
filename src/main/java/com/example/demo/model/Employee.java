@@ -13,7 +13,7 @@ public class Employee {
 	private String username;
     private String email;
     private String password;
-    private String role;
+
     
     public Employee() {}
     
@@ -23,7 +23,7 @@ public class Employee {
 		this.username = username;
 		this.email = email;
 		this.password = password;
-		this.role = role;
+		
 	}
 	
     public int getId() {
@@ -50,12 +50,7 @@ public class Employee {
 	public void setPassword(String password) {
 		this.password = password;
 	}
-	public String getRole() {
-		return role;
-	}
-	public void setRole(String role) {
-		this.role = role;
-	}
+
 	
     
 }

@@ -13,30 +13,16 @@ public class PrimaryTask {
 	private String taskName;
 	private String description;
 	private int employeeId;
-	private String startDate;
-	private String endDate;
-	private int estimatedHours;
-	private int creatorId;
-	private int modifierId;
-	
-	
-	
+
 	public PrimaryTask() {}
 
-
-
-	public PrimaryTask(int taskId, String taskName, String description, int employeeId, String startDate,
-			String endDate, int estimatedHours, int creatorId, int modifierId) {
+	public PrimaryTask(int taskId, String taskName, String description, int employeeId) {
 		super();
 		this.taskId = taskId;
 		this.taskName = taskName;
 		this.description = description;
 		this.employeeId = employeeId;
-		this.startDate = startDate;
-		this.endDate = endDate;
-		this.estimatedHours = estimatedHours;
-		this.creatorId = creatorId;
-		this.modifierId = modifierId;
+		
 	}
 
 
@@ -89,69 +75,5 @@ public class PrimaryTask {
 
 
 
-	public String getStartDate() {
-		return startDate;
-	}
-
-
-
-	public void setStartDate(String startDate) {
-		this.startDate = startDate;
-	}
-
-
-
-	public String getEndDate() {
-		return endDate;
-	}
-
-
-
-	public void setEndDate(String endDate) {
-		this.endDate = endDate;
-	}
-
-
-
-	public int getEstimatedHours() {
-		return estimatedHours;
-	}
-
-
-
-	public void setEstimatedHours(int estimatedHours) {
-		this.estimatedHours = estimatedHours;
-	}
-
-
-
-	public int getCreatorId() {
-		return creatorId;
-	}
-
-
-
-	public void setCreatorId(int creatorId) {
-		this.creatorId = creatorId;
-	}
-
-
-
-	public int getModifierId() {
-		return modifierId;
-	}
-
-
-
-	public void setModifierId(int modifierId) {
-		this.modifierId = modifierId;
-	}
-
-
-
-	
-
-
-	
-	
+		
 }

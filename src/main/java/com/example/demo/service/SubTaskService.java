@@ -30,17 +30,7 @@ public class SubTaskService {
 	    {
 	    	return repo.findAll();
 	    }
-//	 public Iterable<PrimaryTask> deleteByTask_id(int task_id)
-//	    {
-//	    	repo.deleteByTask_id(task_id);
-//	    	return repo.findAll();
-//	    }
 
-//	 public Iterable<SubTask> deleteBytaskid(int subtaskId)
-//	    {
-//	    	repo.deleteByTaskId(subtaskId);
-//	    	return repo.findAll();
-//	    }
 	 
 	 public Iterable<SubTask> deleteBysubtaskId(int subtaskId)
 	    {
